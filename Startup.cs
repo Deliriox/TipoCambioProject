@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -8,6 +9,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TipoCambio.BL.Manager;
+using TipoCambio.BL.Mapper;
+using TipoCambio.DAL.IRepository;
+using TipoCambio.DAL.Repository;
+using TipoCambio.Entities;
 
 namespace TipoCambio
 {
@@ -24,6 +30,16 @@ namespace TipoCambio
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            // Automapper definition
+            services.AddAutoMapper(typeof(ExchangeRateMapper));
+            // Dependency injection
+            services.AddScoped<IExchangeRateManager, ExchangeRateManager>();
+            services.AddScoped<IExchangeRateRepository, ExchangeRateRepository>();
+
+            services.AddDbContext<ExchangeContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+            b => b.MigrationsAssembly(typeof(ExchangeContext).Assembly.FullName)));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
