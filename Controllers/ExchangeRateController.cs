@@ -41,5 +41,14 @@ namespace TipoCambio.Controllers
             var test = await _exchangeManager.GetExchangeRateById(id);
             return Ok(test);
         }
+
+        [HttpPost]
+        public async Task<ActionResult<ExchangeRateModel>> Create(IList<ExchangeRateModel> exchangeRate)
+        {
+            var result = await _exchangeManager.CreateExchangeRate(exchangeRate);
+            if (result.Any())
+                return Ok();
+            return BadRequest();
+        }
     }
 }

@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.31129.286
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TipoCambio", "TipoCambio.csproj", "{16D16F73-245A-4D6F-AA82-36445E6153FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TipoCambio.BL", "..\TipoCambio.BL\TipoCambio.BL.csproj", "{A9D1A5F8-B56E-444D-8F18-70EB7128B7BF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TipoCambio.BL", "..\TipoCambio.BL\TipoCambio.BL.csproj", "{A9D1A5F8-B56E-444D-8F18-70EB7128B7BF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TipoCambio.DAL", "..\TipoCambio.DAL\TipoCambio.DAL.csproj", "{FF819403-A61A-4A1F-B27D-CB43C5D70294}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TipoCambio.DAL", "..\TipoCambio.DAL\TipoCambio.DAL.csproj", "{FF819403-A61A-4A1F-B27D-CB43C5D70294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
