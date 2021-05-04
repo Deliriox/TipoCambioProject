@@ -26,12 +26,12 @@ namespace TipoCambio
         {
             services.AddControllersWithViews();
 
-            // Automapper definition
+            // Automapper definition.
             services.AddAutoMapper(typeof(ExchangeRateMapper));
-            // Dependency injection
+            // Dependency injection.
             services.AddScoped<IExchangeRateManager, ExchangeRateManager>();
             services.AddScoped<IExchangeRateRepository, ExchangeRateRepository>();
-
+            // DB Context deifinition.
             services.AddDbContext<ExchangeContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
             b => b.MigrationsAssembly(typeof(ExchangeContext).Assembly.FullName)));
