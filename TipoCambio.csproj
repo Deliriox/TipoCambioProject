@@ -5,6 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="TipoCambio.BL\**" />
+    <Compile Remove="TipoCambio.DAL\**" />
+    <Content Remove="TipoCambio.BL\**" />
+    <Content Remove="TipoCambio.DAL\**" />
+    <EmbeddedResource Remove="TipoCambio.BL\**" />
+    <EmbeddedResource Remove="TipoCambio.DAL\**" />
+    <None Remove="TipoCambio.BL\**" />
+    <None Remove="TipoCambio.DAL\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.5" />
@@ -20,7 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TipoCambio.BL\TipoCambio.BL.csproj" />
+    <ProjectReference Include="TipoCambio.BL\TipoCambio.BL.csproj" />
   </ItemGroup>
 
 </Project>
